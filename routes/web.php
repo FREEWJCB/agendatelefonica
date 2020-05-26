@@ -23,3 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('agenda', 'AgendaController');
+
+
+Route::get('/cancelar', function() {
+    //devolver al index
+    return redirect()->route('agenda.index')->with('cancelar','Acción cancelado');
+})->name('cancelar');

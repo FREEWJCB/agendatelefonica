@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\agenda;
 class AgendaController extends Controller
 {
     /**
@@ -25,6 +25,7 @@ class AgendaController extends Controller
     public function create()
     {
         //
+        return view('agenda.create');
     }
 
     /**
@@ -35,7 +36,22 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //registrar datos
+        $agenda = new agenda();
+        $agenda->nombres = $request->nombres;
+        $agenda->apellidos = $request->apellidos;
+        $agenda->telefono = $request->telefono;
+        $agenda->celular = $request->celular;
+        $agenda->sexo = $request->sexo;
+        $agenda->email = $request->email;
+        $agenda->posicion = $request->posicion;
+        $agenda->departamento = $request->departamento;
+        $agenda->salario = $request->salario;
+        $agenda->fechadenacimiento = $request->fechadenacimiento;
+        $agenda->save();
+        return redirect()->route('agenda.index')->with('datos','Registro completado');
+        ;
+        // return 'Registro completado';
     }
 
     /**

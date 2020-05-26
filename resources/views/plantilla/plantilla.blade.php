@@ -9,8 +9,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"  crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}"  crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}"  crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="{{ asset('css/fontawesome/css/all.min.css') }}"  crossorigin="anonymous">
+
 
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" crossorigin="anonymous" ></script>
