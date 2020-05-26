@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Index</title>
+    <title>@yield('titulo','plantilla')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"  crossorigin="anonymous">
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+    @yield('contenido')
 </body>
 
 </html>
