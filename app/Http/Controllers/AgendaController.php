@@ -14,7 +14,7 @@ class AgendaController extends Controller
     public function index()
     {
         //
-        $agenda = agenda::paginate(2);
+        $agenda = agenda::paginate(5);
 
         return view('agenda.index', compact('agenda'));
     }
@@ -65,6 +65,8 @@ class AgendaController extends Controller
     public function show($id)
     {
         //
+        $agenda = agenda::findOrFail($id);
+        return view('agenda.show',compact('agenda'));
     }
 
     /**

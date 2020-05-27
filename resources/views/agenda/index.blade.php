@@ -95,7 +95,7 @@
                     {{ $i++}}
                     <tr>
                         <th scope="row">{{ $i }}</th>
-                        <td>{{ $agen->nombres }} {{ $agen->apellidos }}</td>
+                        <td><a href="{{ route('agenda.show',$agen->id)}}">{{ $agen->nombres }} {{ $agen->apellidos }}</a></td>
                         <td>{{ $agen->telefono }}</td>
                         <td>{{ $agen->celular }}</td>
                         <td>{{ $agen->sexo }}</td>
@@ -106,8 +106,8 @@
                         <td>{{ $agen->fechadenacimiento }}</td>
 
                         <td>
+                            <a href="{{ route('agenda.show',$agen->id)}}" class="btn btn-info btncolorblanco"><i class="fa fa-list-alt"></i> Mostrar</a>
                             <a href="{{ route('agenda.edit',$agen->id)}}" class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
                             <a href="{{ route('agenda.confirm',$agen->id)}}" class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
                         </td>
 
