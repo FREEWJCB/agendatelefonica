@@ -106,7 +106,7 @@
                         <td>{{ $agen->fechadenacimiento }}</td>
 
                         <td>
-                            <a href="{{ route('agenda.confirm',$agen->id)}}" class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
+                            <a href="{{ route('agenda.edit',$agen->id)}}" class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
 
                             <a href="{{ route('agenda.confirm',$agen->id)}}" class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
                         </td>

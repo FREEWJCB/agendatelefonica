@@ -76,6 +76,8 @@ class AgendaController extends Controller
     public function edit($id)
     {
         //
+        $agenda = agenda::findOrFail($id);
+        return view('agenda.edit',compact('agenda'));
     }
 
     /**
@@ -88,6 +90,7 @@ class AgendaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        dd($request);
     }
 
     /**
