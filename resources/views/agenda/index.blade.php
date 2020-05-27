@@ -71,6 +71,7 @@
             <a href="{{ route('agenda.create')}}" class="btn btn-info btncolorblanco"><i class="fas fa-user-plus"></i> Agregar un nuevo Registro</a>
         </div>
         <br>
+
         <table class="table-responsive table text-center">
             <thead>
                 <tr>
@@ -89,190 +90,32 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
+                {{ $i=0}}
+                @foreach ($agenda as $agen)
+                    {{ $i++}}
+                    <tr>
+                        <th scope="row">{{ $i }}</th>
+                        <td>{{ $agen->nombres }} {{ $agen->apellidos }}</td>
+                        <td>{{ $agen->telefono }}</td>
+                        <td>{{ $agen->celular }}</td>
+                        <td>{{ $agen->sexo }}</td>
+                        <td>{{ $agen->email }}</td>
+                        <td>{{ $agen->posicion }}</td>
+                        <td>{{ $agen->departamento }}</td>
+                        <td>{{ $agen->salario }}</td>
+                        <td>{{ $agen->fechadenacimiento }}</td>
 
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
+                        <td>
+                            <a href="{{ route('agenda.confirm',$agen->id)}}" class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
 
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
+                            <a href="{{ route('agenda.confirm',$agen->id)}}" class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
+                        </td>
 
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th scope="row">10</th>
-                    <td>Jhonatan David Fernandez Rosa</td>
-                    <td>18499188421</td>
-                    <td>18499188421</td>
-                    <td>Masculino</td>
-                    <td>Jeremiselxi@gmail.com</td>
-                    <td>Auditor TI</td>
-                    <td>Auditoria</td>
-                    <td>66500.00</td>
-                    <td>09/08/1987</td>
-                    <td>
-                        <a class="btn btn-success btncolorblanco"><i class="fa fa-edit"></i> Editar</a>
-
-                        <a class="btn btn-danger btncolorblanco"><i class="fa fa-trash-alt"></i> Eliminar</a>
-                    </td>
-
-                </tr>
-
+                    </tr>
+                @endforeach
             </tbody>
         </table>
-
+        {{$agenda}}
 
     </div>
 
