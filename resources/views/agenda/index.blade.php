@@ -95,7 +95,7 @@
                     {{ $i++}}
                     <tr>
                         <th scope="row">{{ $i }}</th>
-                        <td><a href="{{ route('agenda.show',$agen->id)}}">{{ $agen->nombres }} {{ $agen->apellidos }}</a></td>
+                        <td><a href="{{ route('agenda.show',$agen->id) }}">{{ $agen->nombres }} {{ $agen->apellidos }}</a></td>
                         <td>{{ $agen->telefono }}</td>
                         <td>{{ $agen->celular }}</td>
                         <td>{{ $agen->sexo }}</td>
