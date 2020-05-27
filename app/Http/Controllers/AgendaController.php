@@ -90,7 +90,20 @@ class AgendaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        dd($request);
+        $agenda = agenda::findOrFail($id);
+        $agenda->nombres = $request->nombres;
+        $agenda->apellidos = $request->apellidos;
+        $agenda->telefono = $request->telefono;
+        $agenda->celular = $request->celular;
+        $agenda->sexo = $request->sexo;
+        $agenda->email = $request->email;
+        $agenda->posicion = $request->posicion;
+        $agenda->departamento = $request->departamento;
+        $agenda->salario = $request->salario;
+        $agenda->fechadenacimiento = $request->fechadenacimiento;
+        $agenda->save();
+        return redirect()->route('agenda.index')->with('datos','Registro actualizado correctamente');
+
     }
 
     /**
