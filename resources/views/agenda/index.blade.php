@@ -109,18 +109,18 @@
 
                     </tr>
                 @endforeach
-            </tbody>
+            </tbody>s
         </table>
-        //
+        {{--  //
         /* soluciones cuando el appends no está en el controlador
         {{$agenda->appends(Request::only(['nombres','apellidos','telefono']))}}
         {!! $agenda->appends(Request::only(['nombres','apellidos','telefono'])) !!}
         {{$agenda->appends(Request::except(['page']))}}
         {!! $agenda->appends(Request::except(['page'])) !!}
         {{ $agenda->appends($_GET) }}
-        */
+        */  --}}
 
-        // solución cuando el appends está en el controlador
+        {{--  // solución cuando el appends está en el controlador  --}}
         {{$agenda}}
 
     </div>
