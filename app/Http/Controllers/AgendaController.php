@@ -16,10 +16,14 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $agenda = agenda::paginate(5);
+        $nombres = $request->get('bs-nombres');
+        $apellidos = $request->get('bs-apellidos');
+        $telefono = $request->get('bs-telefono');
+
+        $agenda = agenda::nombres($nombres)->apellidos($apellidos)->telefono($telefono)->paginate(5);
 
         return view('agenda.index', compact('agenda'));
     }

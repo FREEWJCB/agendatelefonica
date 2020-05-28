@@ -49,6 +49,15 @@
             </ol>
         </nav>
 
+        <nav class="navbar navbar-light float-right">
+            <form class="form-inline">
+                <input name='bs-nombres' id='bs-nombres' class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" arialabel="Search">
+                <input name='bs-apellidos' id='bs-apellidos' class="form-control mr-sm-2" type="search" placeholder="Buscar por apellido" arialabel="Search">
+                <input name='bs-telefono' id='bs-telefono' class="form-control mr-sm-2" type="search" placeholder="Buscar por telefono" arialabel="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="buscar">Search</button>
+            </form>
+        </nav>
+
         <br>
         <h1 class="text-center">Datos personales</h1>
 
@@ -76,9 +85,10 @@
                 </tr>
             </thead>
             <tbody>
-                {{ $i=0}}
+                @php($i=0)
+
                 @foreach ($agenda as $agen)
-                    {{ $i++}}
+                    @php($i++)
                     <tr>
                         <th scope="row">{{ $i }}</th>
                         <td><a href="{{ route('agenda.show',$agen->id) }}">{{ $agen->nombres }} {{ $agen->apellidos }}</a></td>
