@@ -109,7 +109,7 @@
 
                     </tr>
                 @endforeach
-            </tbody>s
+            </tbody>
         </table>
         {{--  //
         /* soluciones cuando el appends no está en el controlador
