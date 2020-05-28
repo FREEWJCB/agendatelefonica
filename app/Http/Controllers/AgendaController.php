@@ -23,7 +23,22 @@ class AgendaController extends Controller
         $apellidos = $request->get('bs-apellidos');
         $telefono = $request->get('bs-telefono');
 
-        $agenda = agenda::nombres($nombres)->apellidos($apellidos)->telefono($telefono)->paginate(5);
+        // Hacen la misma funcion, captura los datos get necesarios cuando el appends no está en la vista
+        $variableurl=$request->all();
+        /*$variableurl=$request->input();
+        $variableurl=$request->query();
+        $variableurl=$request->only(['bs-nombres','bs-apellidos','bs-telefono']);
+        $variableurl=$request->except(['page']);
+        $variableurl=$_GET;
+        $variableurl=[
+            'bs-nombres' => $nombres,
+            'bs-apellidos' => $apellidos,
+            'bs-telefono' => $telefono];*/
+
+        // cuando el appends está en la vista
+        // $agenda = agenda::nombres($nombres)->apellidos($apellidos)->telefono($telefono)->paginate(5);
+        // cuando el appends no está en la vista
+        $agenda = agenda::nombres($nombres)->apellidos($apellidos)->telefono($telefono)->paginate(5)->appends($variableurl);
 
         return view('agenda.index', compact('agenda'));
     }
